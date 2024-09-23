@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Example scrollbar customization */
+.react-scrollbars-custom {
+  /* Your custom styles here */
+}
+
+.react-scrollbars-custom .ScrollbarsTrack {
+  background-color: #0F172A; /* Track background color */
+}
+
+.react-scrollbars-custom .ScrollbarsThumb {
+  background-color: #888; /* Thumb color */
+  border-radius: 4px; /* Thumb border radius */
+}
+
+body {
+
+  background-color: #0F172A;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (min-width: 1024px) {
+  .loginbg {
+    /* Set background image */
+  background-image: url('../public/assets/loginbg.png');
+  /* Adjust background size and other properties as needed */
+  background-size: cover;
+  background-position: center;
+  /* Set other styles for your component */
+  /* For example: */
+  width: 100%;
+  height: 100%;
+  /* Add more styles as needed */
+  }
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.loginbg {
+  background-color: white;
+}
+.drawer{
+  background-color: transparent;
+}
+.glassy-bg {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);   
+  border: 1px solid rgba(0, 0, 0, 0.3); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);   
+}
+.glassy-bg2 {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);   
+  /* border: 1px solid rgba(0, 0, 0, 0.3);  */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);   
+}
+
+.custom-option {
+  padding: 50px;
+  background-color: #1d4ed8; /* Tailwind bg-blue-600 */
+  color: white;
+  border: none;
+}
+.custom-option:hover {
+  background-color: #1a2438; /* Tailwind hover:bg-blue-700 */
+}
+option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 20px; 
+}
+
+/* REACT CALENDER */
+
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: none;
+}
+/* .mustafa-phatay-huay-condom-ki-ghalti{
+  display: none;
+  flex-wrap: nowrap;
+  lulli: none;
+  mustafa ki padaish k baad us k abbu ki dukhi dastan: meray beta mustafa padaish say pehlay 
+  aik raat apmi nunnu say baaten kartay huay kafi dino ki baat hai meri nunnu yaroo ki yaar jhanto ka bhai dono aik sath ando k sahaary bethay huay kati the khujli 
+  halka khujaay kia khara hua ahtiram main phir gaya kali guffa main agaya mustafa bara parishn behal main hua parisahn main per ab kia beta toh apna he hai 
+  samhalna toh huga duddo playa phir usi per bhens wani k ansoo nikaltay huay ankoon say nahe rasta badalwa kar nunnu say ab kia tha dala madarsay main gari sahab 
+  nay rulaya bhoot roya bechara pashatya bhoot per beta toh apna hai dekho toh yaar hui khatam yaha khani ab frontend karta hai khush bash hai baqi ali qist man  
+} */
