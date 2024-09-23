@@ -41,8 +41,8 @@ const FileUploader = () => {
 
     return (
         <div className='flex justify-start my-5'>
-            <div className=" p-3 bg-white rounded-lg shadow-md">
-                <h1>Upload Project File <span className='italic text-sm text-gray-500'>(if any)</span></h1>
+            <div className=" p-3 bg-transparent rounded-lg shadow-md">
+                <h1 className='text-white'>Upload Project File <span className='italic text-sm text-gray-500'>(if any)</span></h1>
                 <input
                     type="file"
                     className=" text-sm text-gray-900 border border-gray-300 rounded-r-lg cursor-pointer bg-gray-50"
@@ -51,12 +51,12 @@ const FileUploader = () => {
                 {filePreview && (
                     <img src={filePreview} alt="Preview" className="my-4 w-full  object-cover" />
                 )}
-                <button
+                {/* <button
                     onClick={handleUpload}
                     className="mt-4 mx-5 px-4 py-2 bg-blue-800 text-white rounded-lg hover:bg-blue-500"
                 >
                     Upload
-                </button>
+                </button> */}
             </div>
         </div>
     );

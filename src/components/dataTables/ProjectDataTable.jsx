@@ -223,62 +223,100 @@ const CustomersDataTable = () => {
                 </div>
 
                 <DataTable
-                    title="Projects"
-                    columns={columns}
-                    data={filteredData}
-                    pagination={true}
-                    paginationPerPage={10}
-                    paginationRowsPerPageOptions={[5, 10, 20, 50]}
-                    paginationComponentOptions={{
-                        rowsPerPageText: 'Rows per page:',
-                    }}
-                    highlightOnHover={true}
-                    customStyles={{
-                        header: {
-                            style: {
-                                fontSize: '16px',
-                                fontWeight: 'bold',
-                                background: 'linear-gradient(to right, #1e3a8a, #2563eb, #60a5fa);',
-                                opacity: 'var(--tw-bg-opacity)',
-                                color: 'white',
-                                borderTopLeftRadius: "10px",
-                                borderTopRightRadius: "10px",
-                                paddingLeft: '35px',
-                            },
-                        },
-                        headRow: {
-                            style: {
-                                backgroundColor: '#ffffff',
-                            },
-                        },
-                        headCells: {
-                            style: {
-                                paddingLeft: '8px', // Adjust padding as needed
-                                paddingRight: '8px', // Adjust padding as needed
-                            },
-                        },
-                        rows: {
-                            style: {
-                                minHeight: '48px', // Reduce row height
-                                borderBottomWidth: '1px',
-                                borderColor: '#e2e8f0',
-                                '&:nth-of-type(odd)': {
-                                    backgroundColor: '#ffffff',
-                                },
-                                '&:hover': {
-                                    backgroundColor: '#ffffff',
-                                },
-                            },
-                        },
-                        cells: {
-                            style: {
-                                paddingLeft: '8px', // Adjust padding as needed
-                                paddingRight: '8px', // Adjust padding as needed
-                            },
-                        },
-                    }}
-                    className="table-auto w-full rounded-md"
-                />
+                title=" Projects"
+                
+                columns={columns}
+                data={filteredData}
+                pagination={true}
+                paginationPerPage={5}
+                paginationRowsPerPageOptions={[5, 10, 20, 50]}
+                paginationComponentOptions={{
+                  rowsPerPageText: 'Rows per page:',
+                }}
+                highlightOnHover={false}
+                customStyles={{
+                  tableWrapper: {
+                    style: {
+                      borderTop: 'none',
+                      
+                      border: '16px solid #1C2C50',
+
+                    },
+                  },
+                  header: {
+                    style: {
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      background: '#1C2C50',
+                      opacity: 'var(--tw-bg-opacity)',
+                      color: 'white',
+                      borderTopLeftRadius: "10px",
+                      borderTopRightRadius: "10px",
+                      paddingLeft: "35px",
+                    },
+                  },
+                  headRow: {
+                    style: {
+                      backgroundColor: '#f0f0f0',
+                      color: '#0F172A',
+                    },
+                  },
+                  headCells: {
+                    style: {
+                      paddingLeft: '8px', // Adjust padding as needed
+                      paddingRight: '8px', // Adjust padding as needed
+                      color: '#0F172A ',
+                    },
+                  },
+                  rows: {
+                    style: {
+                      minHeight: '48px', // Reduce row height
+                      borderBottom: 'none', // Ensure no border-bottom
+                      '&:nth-of-type(odd)': {
+                        backgroundColor: '#f7f7f7',
+                        color: '#0F172A',
+                      },
+                      '&:nth-of-type(even)': {
+                        backgroundColor: '#f7f7f7',
+                        borderBottom: 'gray', // Ensure no border-bottom
+                        color: '#0F172A',
+                      },
+                      '&:hover': {
+                        backgroundColor: '#f7f7f7',
+                      },
+                    },
+                  },
+                  cells: {
+                    style: {
+                      paddingLeft: '8px', // Adjust padding as needed
+                      paddingRight: '8px', // Adjust padding as needed
+                      backgroundColor: '#f7f7f7',
+                      color: '#0F172A',
+                    },
+                  },
+                  pagination: {
+                    style: {
+                      backgroundColor: '#1C2C50',
+                      // border: '8px solid #2851BF',
+                      color: '#f7f7f7',
+                    },
+                    pageButtonsStyle: {
+                      // backgroundColor: '#4E72C2',
+
+                      color: '#f7f7f7',
+                      fill: '#f7f7f7',
+                      '&:hover:not(:disabled)': {
+                        backgroundColor: '#4E72C2', // A slightly lighter shade for hover effect
+                      },
+                      '&:focus': {
+                        outline: 'none',
+                        backgroundColor: '#4E72C2', // Same as hover
+                      },
+                    },
+                  },
+                }}
+                className="table-auto w-full rounded-md"
+              />
             </div>
         </div>
     );

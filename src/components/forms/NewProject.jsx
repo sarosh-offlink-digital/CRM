@@ -100,7 +100,6 @@ const NewProject = () => {
         </div>
         <div>
           <FileUploader/>
-          
         </div>
         <button
           type="button"

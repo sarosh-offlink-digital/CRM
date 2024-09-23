@@ -9,7 +9,9 @@ import Projectmembers from '../../projectcomponents/Projectmembers';
 import 'react-quill/dist/quill.snow.css';
 import ProjectDiscussion from '../../projectcomponents/ProjectDiscussion'
 import ProjectFile from '../../projectcomponents/ProjectFile'
-
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import FileUploader from '../shared_components/FileUploader'
 
 const ProjectForm = () => {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -42,13 +44,13 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '30th September 2024'
   },
-  {
+  // {
 
-    TaskID: 'NT5',
-    'Task Name': 'Offlink Digital Services Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '30th September 2024'
-  },
+  //   TaskID: 'NT5',
+  //   'Task Name': 'Offlink Digital Services Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
   ])
 
 
@@ -73,23 +75,120 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '30th September 2024'
   },
-  {
+  // {
 
-    TaskID: 'RT4',
-    'Task Name': 'Offlink Digital Portfolio Page Revamp',
+  //   TaskID: 'RT4',
+  //   'Task Name': 'Offlink Digital Portfolio Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+  //   TaskID: 'RT5',
+  //   'Task Name': 'Offlink Digital Services Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  ])
+  let [review, setreview] = useState([{
+
+    TaskID: 'RV1',
+    'Task Name': 'Offlink Digital Index Page Revamp',
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '30th September 2024'
   },
   {
 
-    TaskID: 'RT5',
-    'Task Name': 'Offlink Digital Services Page Revamp',
+    TaskID: 'RV2',
+    'Task Name': 'Offlink Digital About Us Page Revamp',
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '30th September 2024'
   },
+  // {
 
+  //   TaskID: 'RV3',
+  //   'Task Name': 'Offlink Digital About Us Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+
+  //   TaskID: 'RV4',
+  //   'Task Name': 'Offlink Digital PoRVfolio Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+  //   TaskID: 'RV5',
+  //   'Task Name': 'Offlink Digital Services Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
   ])
 
+  let [completed, setcompleted] = useState([{
+
+    TaskID: 'CT1',
+    'Task Name': 'Offlink Digital Index Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '30th September 2024'
+  },
+  // {
+
+  //   TaskID: 'CT2',
+  //   'Task Name': 'Offlink Digital About Us Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+
+  //   TaskID: 'CT3',
+  //   'Task Name': 'Offlink Digital About Us Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+
+  //   TaskID: 'CT4',
+  //   'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  // {
+  //   TaskID: 'CT5',
+  //   'Task Name': 'Offlink Digital Services Page Revamp',
+  //   'Task Description': 'Revamp the index page of the website',
+  //   'Task Deadline': '30th September 2024'
+  // },
+  ])
+
+
+  // State to capture form data
+  const [taskType, setTaskType] = useState(''); // 'New Task' or 'Revised Task'
+  const [taskName, setTaskName] = useState('');
+  const [taskID, setTaskID] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
+  const [taskDeadline, setTaskDeadline] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newTask = {
+      TaskID: taskID,
+      'Task Name': taskName,
+      'Task Description': taskDescription,
+      'Task Deadline': taskDeadline,
+    };
+
+    // Add to newTasks or revisionTasks based on taskType
+    if (taskType === 'New Task') {
+      setTasks([...newTasks, newTask]);
+    } else if (taskType === 'Revised Task') {
+      setRevisionTasks([...revisionTasks, newTask]);
+    }
+
+    // Close modal or reset form (optional)
+    document.getElementById('my_modal_2').close();
+  };
   const [displayTabs, setDisplayTabs] = useState('Overview')
   const handleRendering = (tabs) => {
     setDisplayTabs(tabs)
@@ -111,6 +210,7 @@ const ProjectForm = () => {
     ['Task 3', 'Task 3', 'Resource 2', new Date(2024, 6, 6), new Date(2024, 6, 10), null, 5, 'Task 2', '#0000FF'],
     ['Task 4', 'Task 4', 'Resource 2', new Date(2024, 6, 6), new Date(2024, 6, 10), null, 60, 'Task 3', '#FFFF00'],
   ];
+
   const options = {
     height: 400,
     gantt: {
@@ -236,16 +336,23 @@ const ProjectForm = () => {
                           <div className='flex flex-wrap gap-16 justify-between items-center'>
                             <div className='flex-grow'>
                               <div className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
-                                <i class="fa-solid fa-circle-plus"></i> New Tasks
+                                New Tasks
                               </div>
                               <div className='border-white border-2 border-t-0 p-4'>
                                 <div>
                                   {newTasks.map((newTasks) => (
                                     <div
                                       key={newTasks.TaskID}
-                                      className='cursor-pointer my-4 text-white'
+                                      className='cursor-pointer my-4 text-white hover:text-blue-500'
                                       onClick={() => setSelectedTask(newTasks)}>
-                                      {newTasks['TaskID']} - {newTasks['Task Name']}
+                                      <div className='flex flex-wrap justify-between'>
+                                        <div>
+                                          {newTasks['TaskID']} - {newTasks['Task Name']}
+                                        </div>
+                                        <div>
+                                          {newTasks['Task Deadline']}
+                                        </div>
+                                      </div>
                                     </div>
                                   ))}
 
@@ -278,15 +385,22 @@ const ProjectForm = () => {
                             </div>
                             <div className='flex-grow'>
                               <div className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
-                                <i class="fa-solid fa-circle-plus"></i> Revision Tasks
+                                Revision Tasks
                               </div>
                               <div className='border-white border-2 border-t-0 p-4'>
                                 {revisionTasks.map((revtasks) => (
                                   <div
                                     key={revtasks.TaskID}
-                                    className='cursor-pointer my-4 text-white'
+                                    className='cursor-pointer my-4 text-white hover:text-blue-500'
                                     onClick={() => setSelectedTask(revtasks)}>
-                                    {revtasks['TaskID']} - {revtasks['Task Name']}
+                                    <div className='flex justify-between flex-wrap'>
+                                      <div>
+                                        {revtasks['TaskID']} - {revtasks['Task Name']}
+                                      </div>
+                                      <div>
+                                        {revtasks['Task Deadline']}
+                                      </div>
+                                    </div>
                                   </div>
                                 ))}
                               </div>
@@ -311,22 +425,108 @@ const ProjectForm = () => {
           {displayTabs === 'Tasks' &&
             (
               <div className='my-5'>
-                <div className='flex flex-wrap  gap-16 justify-between items-center'>
-                  <div className='flex-grow'>
-                    <div className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
-                      <i class="fa-solid fa-circle-plus"></i> New Tasks
+                <button className='tooltip tooltip-info tooltip-right bg-gradient-to-r from-blue-700 to-purple-400 text-white p-3 rounded-lg my-4' onClick={() => document.getElementById('my_modal_2').showModal()}
+                  data-tip='Add New Task' >
+                  <i
+                    className='fa-solid fa-circle-plus cursor-pointer'
+
+                  ></i>{' '}
+                  Add Task
+                </button>
+                <div className='grid lg:grid-cols-4 grid-cols-1 gap-10 justify-between items-center'>
+                  <div className=''>
+                    <div
+                      className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
+                      New Tasks
                     </div>
-                    <div className='border-white border-2 border-t-0 p-4'>
+                    {/* Modal To Add Tasks */}
+                    {/* Modal To Add Tasks */}
+                    <dialog id='my_modal_2' className='modal'>
+                      <div className='modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300'>
+                        <h3 className='font-bold text-lg'>Add Task</h3>
+                        <form onSubmit={handleSubmit} className='text-black'>
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-list-check text-green-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Task Name'
+                              value={taskName}
+                              onChange={(e) => setTaskName(e.target.value)} />
+                          </label>
+                          <div className='relative w-full'>
+                            <select
+                              className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 appearance-none'
+                              value={taskType}
+                              onChange={(e) => setTaskType(e.target.value)}
+                            >
+                              <option selected disabled hidden value=''>
+                                Select Task Type
+                              </option>
+                              <option value='New Task'>New Task</option>
+                              <option value='Revised Task'>Revised Task</option>
+                            </select>
+                            <i className="fa-solid fa-circle-arrow-down text-white absolute right-4 top-1/2 transform -translate-y-1/2"></i>
+                          </div>
+
+
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-hashtag text-orange-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Task ID'
+                              value={taskID}
+                              onChange={(e) => setTaskID(e.target.value)}
+                            />
+                          </label>
+                          <label className=''>
+                            <div>
+                              <h1 className='text-white'><i className='fa-solid fa-info text-rose-500'></i> Task Description:</h1>
+                            </div>
+                            <textarea type='text' className='bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 focus:ring-0 focus:outline-none h-64' placeholder='...' value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}></textarea>
+                          </label>
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-hourglass-half text-blue-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Deadline'
+                              value={taskDeadline}
+                              onChange={(e) => setTaskDeadline(e.target.value)}
+                            />
+                          </label>
+                          <div>
+                            <FileUploader className='bg-slate-900' />
+                          </div>
+                          <div className='flex justify-between'>
+                            <button type='submit' data-tip='Save & Submit' className='tooltip tooltip-info tooltip-right bg-blue-800 p-3 mt-2 text-white rounded-md'>
+                              Save
+                            </button>
+                            <button type='button' data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => document.getElementById('my_modal_2').close()}>
+                              Close
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </dialog>
+                    <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl'>
                       <div>
                         {newTasks.map((newTasks) => (
                           <div
                             key={newTasks.TaskID}
-                            className='cursor-pointer my-4 text-white'
+                            className='cursor-pointer my-4 text-white hover:text-blue-500'
                             onClick={() => setSelectedTask(newTasks)}>
-                            {newTasks['TaskID']} - {newTasks['Task Name']}
+                            <div className='flex flex-wrap justify-between'>
+                              <div>
+                                {newTasks['TaskID']} - {newTasks['Task Name']}
+                              </div>
+                              <div>
+                                {newTasks['Task Deadline']}
+                              </div>
+                            </div>
                           </div>
                         ))}
-
                         {selectedTask && (
                           <dialog id="my_modal_1" className="modal" open>
                             <div className="text-white modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300">
@@ -354,22 +554,176 @@ const ProjectForm = () => {
                       </div>
                     </div>
                   </div>
-                  <div className='flex-grow'>
+                  <div className=''>
                     <div className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
-                      <i class="fa-solid fa-circle-plus"></i> Revision Tasks
+                      Revision Tasks
                     </div>
-                    <div className='border-white border-2 border-t-0 p-4'>
+                    <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl'>
                       {revisionTasks.map((revtasks) => (
                         <div
                           key={revtasks.TaskID}
-                          className='cursor-pointer my-4 text-white'
+                          className='cursor-pointer my-4 text-white hover:text-blue-500'
                           onClick={() => setSelectedTask(revtasks)}>
-                          {revtasks['TaskID']} - {revtasks['Task Name']}
+                          <div className='flex justify-between flex-wrap'>
+                            <div>
+                              {revtasks['TaskID']} - {revtasks['Task Name']}
+                            </div>
+                            <div>
+                              {revtasks['Task Deadline']}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className=''>
+                    <div
+                      className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
+                      Tasks on Review
+                    </div>
+                    {/* Modal To Add Tasks */}
+                    {/* Modal To Add Tasks */}
+                    {/* <dialog id='my_modal_2' className='modal'>
+                      <div className='modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300'>
+                        <h3 className='font-bold text-lg'>Add Task</h3>
+                        <form onSubmit={handleSubmit} className='text-black'>
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-list-check text-green-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Task Name'
+                              value={taskName}
+                              onChange={(e) => setTaskName(e.target.value)} />
+                          </label>
+                          <div className='relative w-full'>
+                            <select
+                              className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 appearance-none'
+                              value={taskType}
+                              onChange={(e) => setTaskType(e.target.value)}
+                            >
+                              <option selected disabled hidden value=''>
+                                Select Task Type
+                              </option>
+                              <option value='New Task'>New Task</option>
+                              <option value='Revised Task'>Revised Task</option>
+                            </select>
+                            <i className="fa-solid fa-circle-arrow-down text-white absolute right-4 top-1/2 transform -translate-y-1/2"></i>
+                          </div>
+
+
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-hashtag text-orange-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Task ID'
+                              value={taskID}
+                              onChange={(e) => setTaskID(e.target.value)}
+                            />
+                          </label>
+                          <label className=''>
+                            <div>
+                              <h1 className='text-white'><i className='fa-solid fa-info text-rose-500'></i> Task Description:</h1>
+                            </div>
+                            <textarea type='text' className='bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 focus:ring-0 focus:outline-none h-64' placeholder='...' value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}></textarea>
+                          </label>
+                          <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                            <i className='fa-solid fa-hourglass-half text-blue-500'></i>
+                            <input
+                              type='text'
+                              className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                              placeholder='Deadline'
+                              value={taskDeadline}
+                              onChange={(e) => setTaskDeadline(e.target.value)}
+                            />
+                          </label>
+                          <div>
+                            <FileUploader className='bg-slate-900' />
+                          </div>
+                          <div className='flex justify-between'>
+                            <button type='submit' data-tip='Save & Submit' className='tooltip tooltip-info tooltip-right bg-blue-800 p-3 mt-2 text-white rounded-md'>
+                              Save
+                            </button>
+                            <button type='button' data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => document.getElementById('my_modal_2').close()}>
+                              Close
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </dialog> */}
+                    <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl'>
+                      <div>
+                        {review.map((review) => (
+                          <div
+                            key={review.TaskID}
+                            className='cursor-pointer my-4 text-white hover:text-blue-500'
+                            onClick={() => setSelectedTask(review)}>
+                            <div className='flex flex-wrap justify-between'>
+                              <div>
+                                {review['TaskID']} - {review['Task Name']}
+                              </div>
+                              <div>
+                                {review['Task Deadline']}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                        {selectedTask && (
+                          <dialog id="my_modal_1" className="modal" open>
+                            <div className="text-white modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300">
+                              <h3 className="font-bold text-lg border-b-gray-500 border-b-2 mb-8"><i class="fa-solid fa-list-check"></i> Task Title: {selectedTask['Task Name']}</h3>
+                              <div className='my-4 flex justify-between border-b-gray-500 border-b-2'>
+                                <p className=" text-sm text-gray-400"><i class="fa-solid fa-hashtag"></i>Task ID: {selectedTask['TaskID']}</p>
+                                <p className='text-sm text-gray-400'><i class="fa-solid fa-user-shield"></i> Uploaded By: Admin</p>
+                              </div>
+                              <div className='my-8 border-b-gray-500 border-b-2'>
+                                <p className="mb-2"><i class="fa-solid fa-info"></i> Task Description: </p>
+                                <p>{selectedTask['Task Description']}</p>
+                              </div>
+                              <p className='border-b-gray-500 border-b-2 mb-8'><i class="fa-solid fa-hourglass-half"></i> Task Deadline: {selectedTask['Task Deadline']}</p>
+                              <div>
+                                <p className='text-sm text-gray-400 italic'> Attachments: </p>
+                              </div>
+                              <div className="modal-action">
+                                <button data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => setSelectedTask(null)}>
+                                  Close
+                                </button>
+                              </div>
+                            </div>
+                          </dialog>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className=''>
+                    <div className='border-2 text-center rounded-t-md py-2 text-white font-semibold text-xl bg-gradient-to-r from-blue-700 to-purple-700'>
+                      Completed Tasks
+                    </div>
+                    <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl'>
+                      {completed.map((completed) => (
+                        <div
+                          key={completed.TaskID}
+                          className='cursor-pointer my-4 text-white hover:text-blue-500'
+                          onClick={() => setSelectedTask(completed)}>
+                          <div className='flex justify-between flex-wrap'>
+                            <div>
+                              {completed['TaskID']} - {completed['Task Name']}
+                            </div>
+                            <div>
+                              {completed['Task Deadline']}
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
+                {/* REVIEW AND COMPLETED */}
+                <div className='flex flex-wrap mt-5  gap-16 justify-between items-center'>
+                 
+                </div>
+                {/* END */}
               </div>
             )}
           {displayTabs === 'Files' &&
@@ -410,6 +764,5 @@ const ProjectForm = () => {
 
   )
 }
-
 
 export default ProjectForm
