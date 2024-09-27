@@ -466,10 +466,10 @@ const CustomersDataTable = ({ onFetchData }) => {
         display === 'form' &&
         (
           <div className='my-10'>
-            <div className='bg-gradient-to-r from-blue-700 via-purple-400 to-blue-600 rounded-t-md p-4'>
+            <div className='bg-gradient-to-r from-blue-700 to-purple-700 rounded-t-md p-4'>
               <h1 className='text-sm xl:text-xl text-white'>Customer Information #{selectedCustomer._id}</h1>
             </div>
-            <div className='bg-white p-4 rounded-b-md py-10'>
+            <div className='bg-slate-800 p-4 rounded-b-md py-10'>
               <div>
                 <div>
                   {/* <div className='flex justify-start lg:justify-end'>
@@ -482,58 +482,58 @@ const CustomersDataTable = ({ onFetchData }) => {
               <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >ID: {selectedCustomer.contact_form_id}</h1>
             </label> */}
                   <div className=' flex flex-col lg:flex-row gap-2'>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i className="fa-solid fa-user text-blue-800"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Name: {selectedCustomer.contact_form_name}</h1>
                     </label>
-                    <label class="my-3 input input-bordered flex items-center bg-gray-50  text-black gap-2 w-full lg:w-[50%]">
+                    <label class="my-3 input input-bordered flex items-center bg-slate-900 border-gray-400 text-white gap-2 w-full lg:w-[50%]">
                       <i className="fa-solid fa-envelope text-orange-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Email: {selectedCustomer.contact_form_email} </h1>
                     </label>
                   </div>
                   <div className=' flex flex-col lg:flex-row gap-2'>
-                    <label class="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%] ">
+                    <label class="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%] ">
                       <i className="fa-solid fa-phone text-green-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Phone: {selectedCustomer.contact_form_phone} </h1>
                     </label>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i className="fa-solid fa-globe text-blue-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Package: {selectedCustomer.contact_form_service}</h1>
                     </label>
 
                   </div>
                   <div className=' flex flex-col lg:flex-row gap-2'>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i class="fa-solid fa-layer-group text-cyan-400"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Brand: {selectedCustomer.brand}</h1>
                     </label>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i class="fa-solid fa-layer-group text-cyan-400"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Service: {selectedCustomer.contact_form_product_service}</h1>
                     </label>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i class="fa-regular fa-calendar-days text-teal-400"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Created At: {selectedCustomer.createdAt}</h1>
                     </label>
                   </div>
-                  <div className="my-3 bg-gray-50  text-black border-2 rounded-lg w-full p-3">
+                  <div className="my-3 bg-slate-900 border-gray-400 text-white border-2 rounded-lg w-full p-3">
                     <p className='mb-4'><i class="fa-solid fa-message text-blue-500"></i> Message: </p>
                     <p className="grow bg-transparent  border-none focus:ring-0 focus:outline-none"> {selectedCustomer.contact_form_message} </p>
                   </div>
                   <div className=' flex flex-col lg:flex-row gap-2'>
-                    <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                    <label className="my-3 flex items-center bg-slate-900 border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                       <i class="fa-solid fa-file-invoice-dollar text-red-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none " >Invoice #: </h1>
                     </label>
-                    <label class="my-3 input input-bordered flex items-center bg-gray-50  text-black gap-2 w-full lg:w-[50%]">
+                    <label class="my-3 input input-bordered flex items-center bg-slate-900 border-gray-400 text-white gap-2 w-full lg:w-[50%]">
                       <i class="fa-solid fa-coins text-yellow-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Payment: {selectedCustomer.contact_form_payment_currency} {selectedCustomer.contact_form_payment} </h1>
                     </label>
-                    <label class="my-3 input input-bordered flex items-center bg-gray-50  text-black gap-2 w-full lg:w-[50%]">
+                    <label class="my-3 input input-bordered flex items-center bg-slate-900 border-gray-400 text-white gap-2 w-full lg:w-[50%]">
                       <i class="fa-solid fa-credit-card text-cyan-500"></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Payment Mode: {selectedCustomer.contact_form_payment_mode}</h1>
                     </label>
-                    <label class="my-3 input input-bordered flex items-center bg-gray-50  text-black gap-2 w-full lg:w-[50%]">
+                    <label class="my-3 input input-bordered flex items-center bg-slate-900 border-gray-400 text-white gap-2 w-full lg:w-[50%]">
                     <i class={selectedCustomer.contact_form_payment_status === 'Unpaid' ? 'fa-solid fa-circle-exclamation text-orange-500' : 'fa-solid fa-circle-check text-green-500'}></i>
                       <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Payment Status: {selectedCustomer.contact_form_payment_status}</h1>
                     </label>
@@ -558,10 +558,10 @@ const CustomersDataTable = ({ onFetchData }) => {
         (
           <form onSubmit={handleFormSubmit}>
             <div className='my-10'>
-              <div className='bg-gradient-to-r from-blue-700 to-blue-400 rounded-t-md p-4'>
+              <div className='bg-gradient-to-r from-blue-700 to-purple-700 rounded-t-md p-4'>
                 <h1 className='text-sm xl:text-xl text-white'>Edit Customer #{selectedCustomer._id}</h1>
               </div>
-              <div className='bg-white p-4 rounded-b-md py-10'>
+              <div className='bg-slate-800 p-4 rounded-b-md py-10'>
                 <div>
                   <div>
                     {/* <div className='flex justify-start lg:justify-end'>
@@ -574,7 +574,7 @@ const CustomersDataTable = ({ onFetchData }) => {
               <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >ID: {selectedCustomer.contact_form_id}</h1>
             </label> */}
                     <div className=' flex flex-col lg:flex-row gap-2'>
-                      <label className="my-3 flex items-center bg-transparent text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                      <label className="my-3 flex items-center bg-transparent border-gray-400 text-white input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                         <i className="fa-solid fa-user text-blue-800"></i>
                         <h1>Name:</h1>
                         <input
@@ -584,7 +584,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                           onChange={handleInputChangeCustomers}
                         />
                       </label>
-                      <label className="my-3 input input-bordered flex items-center bg-transparent text-black gap-2 w-full lg:w-[50%]">
+                      <label className="my-3 input input-bordered flex items-center bg-transparent text-white border-gray-400 gap-2 w-full lg:w-[50%]">
                         <i className="fa-solid fa-envelope text-orange-500"></i>
                         <h1>Email:</h1>
                         <input
@@ -596,7 +596,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                       </label>
                     </div>
                     <div className=' flex flex-col lg:flex-row gap-2'>
-                      <label className="my-3 flex items-center bg-transparent text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%] ">
+                      <label className="my-3 flex items-center bg-transparent text-white border-gray-400 input input-bordered gap-2 w-full md:w-auto lg:w-[50%] ">
                         <i className="fa-solid fa-phone text-green-500"></i>
                         <h1>Phone:</h1>
                         <input
@@ -606,7 +606,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                           onChange={handleInputChangeCustomers}
                         />
                       </label>
-                      <label className="my-3 flex items-center bg-transparent text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                      <label className="my-3 flex items-center bg-transparent text-white border-gray-400 input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                         <i className="fa-solid fa-globe text-blue-500"></i>
                         <h1>Package:</h1>
                         <input
@@ -618,16 +618,16 @@ const CustomersDataTable = ({ onFetchData }) => {
                       </label>
                     </div>
                     <div className=' flex flex-col lg:flex-row gap-2'>
-                      <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                      <label className="my-3 flex items-center bg-slate-900 input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                         <i class="fa-solid fa-layer-group text-cyan-400"></i>
                         <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Brand: {selectedCustomer.brand}</h1>
                       </label>
-                      <label className="my-3 flex items-center bg-gray-50  text-black input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
+                      <label className="my-3 flex items-center bg-slate-900 input input-bordered gap-2 w-full md:w-auto lg:w-[50%]">
                         <i class="fa-regular fa-calendar-days text-teal-400"></i>
                         <h1 className="grow bg-transparent  border-none focus:ring-0 focus:outline-none" >Created At: {selectedCustomer.createdAt}</h1>
                       </label>
                     </div>
-                    <div className="my-3 bg-gray-50  text-black border-2 rounded-lg w-full p-3">
+                    <div className="my-3 bg-slate-900 rounded-lg w-full p-3">
                       <p className='mb-4'><i class="fa-solid fa-message text-blue-500"></i> Message: </p>
                       <p className="grow bg-transparent  border-none focus:ring-0 focus:outline-none"> {selectedCustomer.contact_form_message} </p>
                     </div>
@@ -636,15 +636,15 @@ const CustomersDataTable = ({ onFetchData }) => {
                       <h1 className='text-xl mb-2 mt-5 font-bold'>Add Invoice</h1>
                       <div>
                         <div className="flex flex-wrap gap-2">
-                          <label className="flex items-center bg-gray-100 text-black input input-bordered gap-2 w-full lg:w-auto flex-grow shadow-md">
+                          <label className="flex items-center bg-slate-900 text-white input input-bordered gap-2 w-full lg:w-auto flex-grow shadow-md">
                             <i className="fa-solid fa-file-invoice-dollar text-teal-500"></i>
                             <p className='border-r-2 px-2 '>INV#000</p>
                             <h1 className="grow bg-transparent border-none focus:ring-0 focus:outline-none"> 0001</h1>
                           </label>
-                          <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full md:w-auto flex-grow shadow-md">
+                          <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full md:w-auto flex-grow shadow-md">
                             <i className="fa-regular fa-credit-card text-cyan-500"></i>
                             <select
-                              className="grow bg-transparent border-none focus:ring-0 focus:outline-none"
+                              className="grow border-none focus:ring-0 focus:outline-none bg-slate-800"
                               onChange={handleCombinedChange}
                               name="contact_form_payment_mode"
                               value={selectedCustomer.contact_form_payment_mode || ''}
@@ -655,10 +655,10 @@ const CustomersDataTable = ({ onFetchData }) => {
                               <option value="PayPal">PayPal</option>
                             </select>
                           </label>
-                          <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full md:w-auto flex-grow shadow-md"
+                          <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full md:w-auto flex-grow shadow-md"
                           >
                             <i className="fa-solid fa-coins text-yellow-500"></i>
-                            <select className="grow bg-transparent border-none focus:ring-0 focus:outline-none" onChange={handleCombinedChange}
+                            <select className="grow bg-slate-800 border-none focus:ring-0 focus:outline-none" onChange={handleCombinedChange}
                               name='contact_form_payment_currency'
                               value={selectedCustomer.contact_form_payment_currency || ''} >
                               <option value="" disabled selected hidden>Currency</option>
@@ -679,9 +679,9 @@ const CustomersDataTable = ({ onFetchData }) => {
                         <div>
                           {items.map(item => (
                             <div key={item.id} className="flex flex-wrap gap-2 my-3">
-                              <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-[28%] shadow-md">
+                              <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-[28%] shadow-md">
                                 <i className="fa-regular fa-square-plus text-blue-800"></i>
-                                <select className="grow bg-transparent border-none focus:ring-0 focus:outline-none"
+                                <select className="grow bg-slate-800 text-white border-none focus:ring-0 focus:outline-none"
                                   name='contact_form_service'
                                   onChange={handleCombinedChange}>
                                   <option value="">{selectedCustomer.contact_form_service}</option>
@@ -702,7 +702,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                                                     onChange={(e) => handleInputChange(item.id, 'customItem', e.target.value)}
                                                 />
                                             </label> */}
-                              <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-auto shadow-md">
+                              <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-auto shadow-md">
                                 <i className="fa-regular fa-square-plus text-blue-800"></i>
                                 <input
                                 onChange={handleInputChangeCustomers}
@@ -712,7 +712,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                                   placeholder='Add Service'
                                 />
                               </label>
-                              <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-[10%] shadow-md">
+                              <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-[10%] shadow-md">
                                 <i class="fa-solid fa-list-ol text-blue-800"></i>
                                 <input
                                   type="number"
@@ -722,7 +722,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                                   onChange={(e) => handleInputChange(item.id, 'itemQty', parseInt(e.target.value))}
                                 />
                               </label>
-                              <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-[20%] shadow-md">
+                              <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-[20%] shadow-md">
                                 <i class="fa-regular fa-money-bill-1 text-green-500"></i>
                                 <input
                                   type="number"
@@ -732,7 +732,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                                   onChange={(e) => handleInputChange(item.id, 'unitCost', parseFloat(e.target.value))}
                                 />
                               </label>
-                              <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-[10%] shadow-md">
+                              <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-[10%] shadow-md">
                                 <i class="fa-solid fa-percent text-orange-500"></i>
                                 <input
                                   type="number"
@@ -744,12 +744,12 @@ const CustomersDataTable = ({ onFetchData }) => {
                               </label>
                               <textarea
                                 type="text"
-                                className="grow bg-white py-2 w-full lg:w-[25%] text-black input input-bordered focus:ring-0 focus:outline-none shadow-md"
+                                className="grow bg-slate-800 text-white py-2 w-full lg:w-[25%]  input input-bordered focus:ring-0 focus:outline-none shadow-md"
                                 placeholder="Description" onChange={(e) => handleInputChange(item.id, 'itemDescription', e.target.value)}
                               ></textarea>
                               <button
                                 type="button" data-tip='Remove'
-                                className='tooltip tooltip-top rounded-lg border-2 border-blue-800 text-blue-800 text-xl font-bold px-4 shadow-md'
+                                className='tooltip tooltip-top rounded-lg border-2 border-blue-400 text-blue-400 text-xl font-bold px-4 shadow-md'
                                 onClick={() => removeItem(item.id)}
                               >
                                 x
@@ -767,18 +767,18 @@ const CustomersDataTable = ({ onFetchData }) => {
                                   <div className='flex justify-end items-center'>
                                     <div>
                                       <div className='flex justify-between '>
-                                        <p className='text-base text-gray-500 '>Qty = </p>
-                                        <p className='text-base text-gray-500'> {item.itemQty} </p>
+                                        <p className='text-base text-white '>Qty = </p>
+                                        <p className='text-base text-white'> {item.itemQty} </p>
                                       </div>
                                       <div className='flex justify-between'>
-                                        <p className=' text-base text-gray-500'>tax =  </p>
-                                        <p className=' text-base text-gray-500'> {item.itemTax}% </p>
+                                        <p className=' text-base text-white'>tax =  </p>
+                                        <p className=' text-base text-white'> {item.itemTax}% </p>
                                       </div>
                                       <div className='w-full border-b-2 '>
 
                                       </div>
                                       <div className='flex'>
-                                        <p className='text-lg mx-1 font-bold text-blue-800 '>Amount = {item.totalCost}</p>
+                                        <p className='text-lg mx-1 font-bold text-blue-400 '>Amount = {item.totalCost}</p>
                                         <p className='text-green-500 text-lg mx-2 '>{currency}</p>
                                       </div>
                                     </div>
@@ -793,7 +793,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                         <button
                           type="button"
                           data-tip='Add item'
-                          className="tooltip border-2 text-blue-800 border-blue-800 p-3 my-5 shadow-md  rounded-md"
+                          className="tooltip border-2 text-blue-400 border-blue-400 p-3 my-5 shadow-md  rounded-md"
                           onClick={addItem}>
                           <i className="fa-regular fa-square-plus"></i> Add Item
                         </button>
@@ -803,15 +803,15 @@ const CustomersDataTable = ({ onFetchData }) => {
 
 
                       {/* INVOICE DIV S */}
-                      <div className='bg-white w-full lg:py-4 lg:px-10'>
+                      <div className='bg-slate-800 w-full lg:py-4 lg:px-10'>
                         <div className='my-8'>
                           <div className='flex items-center justify-between my-10'>
-                            <h1 className='lg:text-center my-2 text-2xl font-semibold text-blue-800'>Invoice# <span className='font-normal text-black '>0120</span></h1>
+                            <h1 className='lg:text-center my-2 text-2xl font-semibold text-blue-400'>Invoice# <span className='font-normal text-white '>0120</span></h1>
                             <img src={brandLogo} className='h-16 w-auto' alt="" />
                           </div>
-                          <label className="flex items-center bg-white text-black input input-bordered gap-2 w-full lg:w-[28%] shadow-md">
-                            <i className="fa-regular fa-square-plus text-blue-800"></i>
-                            <select className="grow bg-transparent border-none focus:ring-0 focus:outline-none"
+                          <label className="flex items-center bg-slate-800 text-white input input-bordered gap-2 w-full lg:w-[28%] shadow-md">
+                            <i className="fa-regular fa-square-plus text-blue-400"></i>
+                            <select className="grow bg-slate-800 text-white border-none focus:ring-0 focus:outline-none"
                               onChange={handleInputChangeCustomers}
                               name='contact_form_payment_status'>
                               <option selected disabled hidden value="">Payment Status</option>
@@ -819,27 +819,27 @@ const CustomersDataTable = ({ onFetchData }) => {
                               <option value="Paid">Paid</option>
                             </select>
                           </label>
-                          {/* <h1 className='text-xl mb-2 font-bold text-blue-800'>Customer Details</h1> */}
+                          {/* <h1 className='text-xl mb-2 font-bold text-blue-400'>Customer Details</h1> */}
                           {/* <div className='flex justify-start gap-6 flex-wrap'>
                                           <div className='flex gap-1'>
                                               <img src={customericon} alt="Customer" className='w-6 h-6' />
-                                              <p className='text-blue-800 font-semibold'> Name: <span className='text-gray-500 font-normal'>{customerDetail.customerName}</span></p>
+                                              <p className='text-blue-400 font-semibold'> Name: <span className='text-gray-500 font-normal'>{customerDetail.customerName}</span></p>
                                           </div>
                                           <div className='flex gap-1'>
                                               <img src={emailicon} alt="Email" className='w-6 h-6' />
-                                              <p className='text-blue-800 font-semibold'>  Email: <span className='text-gray-500 font-normal'>{customerDetail.customerEmail}</span></p>
+                                              <p className='text-blue-400 font-semibold'>  Email: <span className='text-gray-500 font-normal'>{customerDetail.customerEmail}</span></p>
                                           </div>
                                           <div className='flex gap-1' >
                                               <img src={phoneicon} alt="Email" className='w-6 h-6' />
-                                              <p className='text-blue-800 font-semibold'> Contact: <span className='text-gray-500 font-normal'>{customerDetail.customerMobile}</span></p>
+                                              <p className='text-blue-400 font-semibold'> Contact: <span className='text-gray-500 font-normal'>{customerDetail.customerMobile}</span></p>
                                           </div>
                                       </div> */}
                         </div>
                         <div className='border-b-2 border-dashed my-5'></div>
                         <div className='flex justify-between flex-wrap'>
                           <div>
-                            <h1 className='text-xl mb-2 mt-5 font-bold text-blue-800'>Total Items:</h1>
-                            {/* <h1 className='text-blue-800 font-semibold text-xl'>Items: </h1> */}
+                            <h1 className='text-xl mb-2 mt-5 font-bold text-blue-400'>Total Items:</h1>
+                            {/* <h1 className='text-blue-400 font-semibold text-xl'>Items: </h1> */}
                             <h1 className='text-blue-500'>{customerDetail.customerService}</h1>
                             {items.map(item => (
                               <div key={item.id}>
@@ -855,7 +855,7 @@ const CustomersDataTable = ({ onFetchData }) => {
                             ))}
                           </div>
                           <div className='flex flex-col items-end'>
-                            <h1 className='text-xl mb-2 mt-5 text-blue-800 font-bold'>Sub Total</h1>
+                            <h1 className='text-xl mb-2 mt-5 text-blue-400 font-bold'>Sub Total</h1>
                             <div className='flex justify-end'>
                               <p className='text-green-600 text-2xl'>{currency}</p>
                               <h1 className='text-2xl text-end font-semibold text-green-600'>
@@ -876,12 +876,12 @@ const CustomersDataTable = ({ onFetchData }) => {
                               </div>
                               <p className='text-xl'>-{discount}</p>
                             </div>
-                            <p className='text-sm text-blue-800'>Paid via: {paymentMethod}</p>
+                            <p className='text-sm text-blue-400'>Paid via: {paymentMethod}</p>
                           </div>
                         </div>
                         <div className='border-b-2 border-dashed my-5'></div>
                         {/* <div className='w-1/2 h-2 bg-orange-400 my-2'></div>
-                                <div className='w-1/2 h-2 bg-blue-800'></div> */}
+                                <div className='w-1/2 h-2 bg-blue-400'></div> */}
                       </div>
                       {/* INVOICE DIV E */}
                       <label className='flex justify-end px-10'>
@@ -908,7 +908,7 @@ const CustomersDataTable = ({ onFetchData }) => {
 
                       </div>
                     </div>
-                    {/* <button className='bg-blue-800 p-3 my-5 text-white rounded-md' ><i class="fa-solid fa-caret-left mx-2"></i>Back</button> */}
+                    {/* <button className='bg-blue-400 p-3 my-5 text-white rounded-md' ><i class="fa-solid fa-caret-left mx-2"></i>Back</button> */}
                     <div>
 
 

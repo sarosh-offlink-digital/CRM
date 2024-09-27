@@ -17,6 +17,8 @@ import saroshPic from '../../src/sarosh.png'
 import yousufPic from '../../src/yousaf.png'
 import hamzaPic from '../../src/hamza.png'
 import dummyUser from '../../src/user.png'
+import waniPic from '../../src/wani.png'
+import mustafaPic from '../../src/mustafa.png'
 
 const ProjectForm = () => {
   const [selectedTask, setSelectedTask] = useState(null);
@@ -195,19 +197,48 @@ const ProjectForm = () => {
       'memberProfile': yousufPic
     }
   ])
+  const newMember = [{
+    memberID: 5,
+    'memberName': 'Shoaib Wani',
+    'memberRole': 'CMS-Developer',
+    'memberDepartment': 'Production',
+    'memberProfile': waniPic
+  },
+  {
+    memberID: 6,
+    'memberName': 'Muhammad Mustafa',
+    'memberRole': 'Junior Developer',
+    'memberDepartment': 'Production',
+    'memberProfile': mustafaPic
+  },
+  ]
+
 
   // State to capture form data
-  const [taskType, setTaskType] = useState(''); 
+  const [taskType, setTaskType] = useState('');
   const [taskName, setTaskName] = useState('');
   const [taskID, setTaskID] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
   const [taskDeadline, setTaskDeadline] = useState('');
+  //State to capture selected member ID
+  const [selectedMember, setSelectedMember] = useState(null);
 
-
+  const handleMember = (e) => {
+    e.preventDefault();
+     //a function of JS that iterates over array and finds object id based on the selection
+    const selected = newMember.find(member => member.memberID === parseInt(selectedMember));
+    //checks if the user is already in data based on their id, some function finds if the data exists in array or not
+    if(selected && !members.some(member => member.memberID === selected.memberID)){ 
+      
+      setMembers([...members, selected]);
+    }
+    else{
+      console.log('user already exists')
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newTask = {
       TaskID: taskID,
       'Task Name': taskName,
@@ -346,16 +377,19 @@ const ProjectForm = () => {
                       <div className='break-words'>
                         <div className='flex justify-between items-center  bg-gradient-to-r from-blue-700 to-purple-700 border-2 relative  rounded-t-md'>
                           <h1 className=' py-2 text-white font-semibold text-xl '><i class="fa-solid fa-user-group text-purple-500 mx-5"></i>Members</h1>
-                          <div className=''><i class="fa-solid fa-circle-plus absolute z-30 text-white lg:left-40 lg:top-4 top-4 left-40 hover:scale-110 cursor-pointer"></i></div>
-                          <h1 className='mx-6 rounded-full bg-white text-blue-800 font-bold px-3 py-1 tooltip tooltip-info' data-tip='Total Members'>4</h1>
+                          
+                          <h1 className='mx-6 rounded-full bg-white text-blue-800 font-bold px-3 py-1 tooltip tooltip-info' data-tip='Total Members'>{members.length}</h1>
                         </div>
                         <div className='border-t-0 flex justify-between flex-wrap border-2 p-4'>
                           <div >
                             <div className='flex justify-start gap-2 my-2'>
-                              <img src={member1} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={member2} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={member3} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={member4} className='h-8 w-8 rounded-full' alt="" />
+                              {/* <img src={dummyUser} className='h-8 w-8 rounded-full' alt="" />
+                              <img src={hamzaPic} className='h-8 w-8 rounded-full' alt="" />
+                              <img src={saroshPic} className='h-8 w-8 rounded-full' alt="" />
+                              <img src={yousufPic} className='h-8 w-8 rounded-full' alt="" /> */}
+                              {members.map((member)=>(
+                                 <img src={member.memberProfile} className='h-8 w-8 rounded-full' alt="" />
+                              ))}
                             </div>
                           </div>
                           <div className=' py-2 px-5 rounded-lg w-full lg:w-auto border-2'>
@@ -452,10 +486,46 @@ const ProjectForm = () => {
           {displayTabs === 'Members' &&
             (
               <div className='my-10 mx-5'>
+                {/* Add new member modal */}
+                <dialog id='my_modal_member' className='modal'>
+                  <div className='modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300'>
+                    <h3 className='font-bold text-lg'>Add New Member</h3>
+                    <form onSubmit={handleMember} className='text-black'>
+                      <label className=''>
+                        <select
+                          className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 appearance-none'
+                          name="taskType"
+                          id="taskType"
+                          value={selectedMember}
+                          onChange={(e) => setSelectedMember(e.target.value)}
+                        >
+                          <option selected disabled hidden value=''>
+                            Select Member
+                          </option>
+                          {newMember.map((member) => (
+                            <option key={member.memberID} value={member.memberID} className='text-white'>
+                              {member.memberName}
+                            </option>
+                          ))}
+                        </select>
+                        <i className="fa-solid fa-circle-arrow-down text-white absolute right-8 bottom-[102px] transform -translate-y-1/2"></i>
+                      </label>
+
+                      <div className='flex justify-between'>
+                        <button type='submit' data-tip='Save & Submit' className='tooltip tooltip-info tooltip-right bg-blue-800 p-3 mt-2 text-white rounded-md'>
+                          Save
+                        </button>
+                        <button type='button' data-tip='Back to Members' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => document.getElementById('my_modal_member').close()}>
+                          Close
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </dialog>
                 <div className='my-6'>
                   <div className='p-3 rounded-t-lg bg-gradient-to-r from-blue-700 to-purple-700'>
                     <h1 className='text-lg font-semibold text-white'><i class="fa-solid fa-user-group mr-5 text-orange-500"></i>Members Details:
-                      <i class="fa-solid fa-circle-plus mx-4 cursor-pointer"></i></h1>
+                      <i class="fa-solid fa-circle-plus mx-4 cursor-pointer" onClick={() => document.getElementById('my_modal_member').showModal()} ></i></h1>
                   </div>
                   <div className='p-3 bg-slate-800 rounded-b-lg'>
                     {members.map((members) => (
