@@ -51,12 +51,12 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    // {
-    //   TaskID: 'NT5',
-    //   'Task Name': 'Offlink Digital Services Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
+    {
+      TaskID: 'NT5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
   let [revisionTasks, setRevisionTasks] = useState([{
@@ -87,12 +87,12 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    // {
-    //   TaskID: 'RT5',
-    //   'Task Name': 'Offlink Digital Services Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
+    {
+      TaskID: 'RT5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
   let [review, setreview] = useState([{
@@ -109,26 +109,26 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    // {
+    {
 
-    //   TaskID: 'RV3',
-    //   'Task Name': 'Offlink Digital About Us Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
-    // {
+      TaskID: 'RV3',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    //   TaskID: 'RV4',
-    //   'Task Name': 'Offlink Digital PoRVfolio Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
-    // {
-    //   TaskID: 'RV5',
-    //   'Task Name': 'Offlink Digital Services Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
+      TaskID: 'RV4',
+      'Task Name': 'Offlink Digital Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
+      TaskID: 'RV5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
   let [completed, setcompleted] = useState([{
@@ -138,33 +138,33 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    // {
+    {
 
-    //   TaskID: 'CT2',
-    //   'Task Name': 'Offlink Digital About Us Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
-    // {
+      TaskID: 'CT2',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    //   TaskID: 'CT3',
-    //   'Task Name': 'Offlink Digital About Us Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
-    // {
+      TaskID: 'CT3',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    //   TaskID: 'CT4',
-    //   'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
-    // {
-    //   TaskID: 'CT5',
-    //   'Task Name': 'Offlink Digital Services Page Revamp',
-    //   'Task Description': 'Revamp the index page of the website',
-    //   'Task Deadline': '2026-9-30'
-    // },
+      TaskID: 'CT4',
+      'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
+      TaskID: 'CT5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
   let [members, setMembers] = useState([
@@ -215,7 +215,7 @@ const ProjectForm = () => {
 
 
   // State to capture form data
-  const [taskType, setTaskType] = useState('');
+  const [taskType, setTaskType] = useState('New Task');
   const [taskName, setTaskName] = useState('');
   const [taskID, setTaskID] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
@@ -225,14 +225,14 @@ const ProjectForm = () => {
 
   const handleMember = (e) => {
     e.preventDefault();
-     //a function of JS that iterates over array and finds object id based on the selection
+    //a function of JS that iterates over array and finds object id based on the selection
     const selected = newMember.find(member => member.memberID === parseInt(selectedMember));
     //checks if the user is already in data based on their id, some function finds if the data exists in array or not
-    if(selected && !members.some(member => member.memberID === selected.memberID)){ 
-      
+    if (selected && !members.some(member => member.memberID === selected.memberID)) {
+
       setMembers([...members, selected]);
     }
-    else{
+    else {
       console.log('user already exists')
     }
   };
@@ -332,7 +332,7 @@ const ProjectForm = () => {
             <button className={`flex-grow pb-5 ${displayTabs === 'Overview' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Overview') }}><i class="fa-solid fa-border-all mx-2 text-blue-500" ></i>Overview</button>
             <button className={`flex-grow pb-5 ${displayTabs === 'Members' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Members') }}><i class="fa-solid fa-user-group mx-2 text-orange-500" ></i>Members</button>
             <button className={`flex-grow pb-5 ${displayTabs === 'Tasks' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Tasks') }}><i class="fa-solid fa-list-check mx-2 text-rose-500" ></i>Tasks</button>
-            {/* <button className={`flex-grow pb-5 ${displayTabs === 'Files' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Files') }}><i class="fa-solid fa-file-lines mx-2 text-yellow-500" ></i> Files</button> */}
+            <button className={`flex-grow pb-5 ${displayTabs === 'Files' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Files') }}><i class="fa-solid fa-file-lines mx-2 text-yellow-500" ></i> Files</button>
             <button className={`flex-grow pb-5 ${displayTabs === 'Discussion' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Discussion') }}><i class="fa-solid fa-comments mx-2 text-green-500" ></i>Discussion</button>
             <button className={`flex-grow pb-5 ${displayTabs === 'Chart' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Chart') }}><i class="fa-solid fa-chart-gantt mx-2 text-teal-500" ></i>Gantt Chart</button>
             <button className={`flex-grow pb-5 ${displayTabs === 'Notes' ? 'border-blue-500' : 'border-gray-200'} border-b-2`} onClick={() => { handleRendering('Notes') }}><i class="fa-solid fa-note-sticky mx-2 text-indigo-500" ></i>Notes</button>
@@ -341,11 +341,13 @@ const ProjectForm = () => {
             (
               <div className='my-10 mx-5'>
                 <div className=''>
-                  <h1 className='text-xl my-6 mb-2 font-semibold'><i class="fa-solid fa-bars-progress mr-5 text-blue-500"></i>Project Name: Offlink Digital Revamp</h1>
-                  <h1 className='text-xl my-6 mb-2 font-semibold'><i class="fa-solid fa-bars-progress mr-5 text-blue-500"></i>Project Details:</h1>
+                  <h1 className='text-xl my-6 mb-2 font-semibold'><i class="fa-solid fa-bars-progress mr-5 text-purple-500"></i>Project Name: Offlink Digital Revamp</h1>
+                  <h1 className='text-xl my-6 mb-2 font-semibold'><i class="fa-solid fa-file-contract mr-5 text-rose-500"></i>Project Details:</h1>
                   <div className='my-6'>
-                    <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium iste iure deserunt illum pariatur perspiciatis, ducimus unde explicabo repellendus sapiente maxime rem sit vel obcaecati vero aut, placeat amet.</p>
-
+                    <p className='text-white'>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Iusto praesentium iste iure deserunt illum pariatur perspiciatis,
+                      ducimus unde explicabo repellendus sapiente maxime rem sit vel obcaecati vero aut, placeat amet.</p>
                   </div>
                   <div>
                     <h1 className='text-xl mt-10 mb-2 font-semibold'><i class="fa-solid fa-clipboard mr-5 text-green-500"></i>Project Notes:</h1>
@@ -377,26 +379,22 @@ const ProjectForm = () => {
                       <div className='break-words'>
                         <div className='flex justify-between items-center  bg-gradient-to-r from-blue-700 to-purple-700 border-2 relative  rounded-t-md'>
                           <h1 className=' py-2 text-white font-semibold text-xl '><i class="fa-solid fa-user-group text-purple-500 mx-5"></i>Members</h1>
-                          
+
                           <h1 className='mx-6 rounded-full bg-white text-blue-800 font-bold px-3 py-1 tooltip tooltip-info' data-tip='Total Members'>{members.length}</h1>
                         </div>
                         <div className='border-t-0 flex justify-between flex-wrap border-2 p-4'>
                           <div >
                             <div className='flex justify-start gap-2 my-2'>
-                              {/* <img src={dummyUser} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={hamzaPic} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={saroshPic} className='h-8 w-8 rounded-full' alt="" />
-                              <img src={yousufPic} className='h-8 w-8 rounded-full' alt="" /> */}
-                              {members.map((member)=>(
-                                 <img src={member.memberProfile} className='h-8 w-8 rounded-full' alt="" />
+                              {members.map((member) => (
+                                <img src={member.memberProfile} className='h-8 w-8 rounded-full' alt="" />
                               ))}
                             </div>
                           </div>
-                          <div className=' py-2 px-5 rounded-lg w-full lg:w-auto border-2'>
+                          {/* <div className=' py-2 px-5 rounded-lg w-full lg:w-auto border-2'>
                             <h1 className='border-b-2'><span className='text-xl text-orange-500 '>0 </span >Open Tasks</h1>
                             <h1 className='border-b-2'><span className='text-xl text-green-500 '>0 </span >Days Left</h1>
                             <h1 className='border-b-2'><span className='text-xl text-blue-500 '>0 </span >Hours Logged</h1>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                       {/* box 4 */}
@@ -587,7 +585,7 @@ const ProjectForm = () => {
                                 value={taskName}
                                 onChange={(e) => setTaskName(e.target.value)} />
                             </label>
-                            <div className='relative w-full'>
+                            {/* <div className='relative w-full'>
                               <select
                                 className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 appearance-none'
                                 value={taskType}
@@ -599,7 +597,7 @@ const ProjectForm = () => {
                                 <option value='Revised Task'>Revised Task</option>
                               </select>
                               <i className="fa-solid fa-circle-arrow-down text-white absolute right-4 top-1/2 transform -translate-y-1/2"></i>
-                            </div>
+                            </div> */}
                             <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
                               <i className='fa-solid fa-hashtag text-orange-500'></i>
                               <input
@@ -616,8 +614,9 @@ const ProjectForm = () => {
                               </div>
                               <textarea type='text' className='bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 focus:ring-0 focus:outline-none h-64' placeholder='...' value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}></textarea>
                             </label>
+                            <h1 className='text-white'> <i className='fa-solid fa-hourglass-half text-blue-500'></i> Deadline:</h1>
                             <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
-                              <i className='fa-solid fa-hourglass-half text-blue-500'></i>
+                             
                               <input
                                 type='date'
                                 className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
@@ -645,14 +644,19 @@ const ProjectForm = () => {
                           {newTasks.map((newTasks) => (
                             <div
                               key={newTasks.TaskID}
-                              className='cursor-pointer my-4 text-white hover:text-blue-500'
+                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
                               onClick={() => setSelectedTask(newTasks)}>
                               <div className='flex flex-wrap justify-between'>
                                 <div>
-                                  {newTasks['TaskID']} - {newTasks['Task Name']}
+                                  {newTasks['Task Name']}
                                 </div>
-                                <div>
-                                  {newTasks['Task Deadline']}
+                                <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
+                                  <div>
+                                    TaskID: {newTasks['TaskID']}
+                                  </div>
+                                  <div>
+                                    Deadline: {newTasks['Task Deadline']}
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -692,14 +696,19 @@ const ProjectForm = () => {
                         {revisionTasks.map((revtasks) => (
                           <div
                             key={revtasks.TaskID}
-                            className='cursor-pointer my-4 text-white hover:text-blue-500'
+                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
                             onClick={() => setSelectedTask(revtasks)}>
                             <div className='flex justify-between flex-wrap'>
-                              <div>
-                                {revtasks['TaskID']} - {revtasks['Task Name']}
+                              <div >
+                                {revtasks['Task Name']}
                               </div>
-                              <div>
-                                {revtasks['Task Deadline']}
+                              <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
+                                <div>
+                                  TaskID:{revtasks['TaskID']}
+                                </div>
+                                <div>
+                                  Deadline:{revtasks['Task Deadline']}
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -787,14 +796,19 @@ const ProjectForm = () => {
                           {review.map((review) => (
                             <div
                               key={review.TaskID}
-                              className='cursor-pointer my-4 text-white hover:text-blue-500'
+                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
                               onClick={() => setSelectedTask(review)}>
                               <div className='flex flex-wrap justify-between'>
-                                <div>
-                                  {review['TaskID']} - {review['Task Name']}
+                                <div className=''>
+                                  {review['Task Name']}
                                 </div>
-                                <div>
-                                  {review['Task Deadline']}
+                                <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
+                                  <div>
+                                    TaskID:{review['TaskID']}
+                                  </div>
+                                  <div>
+                                    Task Deadline:  {review['Task Deadline']}
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -834,15 +848,20 @@ const ProjectForm = () => {
                         {completed.map((completed) => (
                           <div
                             key={completed.TaskID}
-                            className='cursor-pointer my-4 text-white hover:text-blue-500'
+                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
                             onClick={() => setSelectedTask(completed)}>
                             <div className='flex justify-between flex-wrap'>
                               <div>
-                                {completed['TaskID']} - {completed['Task Name']}
+                                {completed['Task Name']}
                               </div>
-                              <div>
-                                {completed['Task Deadline']}
-                              </div>
+                              <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
+                                  <div>
+                                    TaskID:{completed['TaskID']}
+                                  </div>
+                                  <div>
+                                    Task Deadline:  {completed['Task Deadline']}
+                                  </div>
+                                </div>
                             </div>
                           </div>
                         ))}
