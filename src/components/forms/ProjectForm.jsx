@@ -155,7 +155,7 @@ const ProjectForm = () => {
   {
 
     TaskID: 'CT4',
-    'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
+    'Task Name': 'Offlink Digital Portfolio Page Revamp',
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
@@ -166,6 +166,8 @@ const ProjectForm = () => {
     'Task Deadline': '2026-9-30'
   },
   ])
+  let [comments, setComments] = useState(['this is first comment', 'this is second comment'])
+  const newComment = useRef();
 
   let [members, setMembers] = useState([
     {
@@ -212,7 +214,16 @@ const ProjectForm = () => {
     'memberProfile': mustafaPic
   },
   ]
-
+  const handleComment = (e) => {
+    e.preventDefault();
+    const newCommentCont = newComment.current.value;
+    if(newCommentCont.length===0){
+      console.log('comment length error')
+    }
+    else{
+      setComments([...comments, newCommentCont]);
+    }
+  }
 
   // State to capture form data
   const [taskType, setTaskType] = useState('New Task');
@@ -591,7 +602,7 @@ const ProjectForm = () => {
                               </div>
                               <textarea type='text' className='bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4 focus:ring-0 focus:outline-none h-64' placeholder='...' value={taskDescription} onChange={(e) => setTaskDescription(e.target.value)}></textarea>
                             </label>
-                            <h1 className='text-white'> <i className='fa-solid fa-hourglass-half text-blue-500'></i> Deadline:</h1>
+                            <h1 className='text-white'> <i className='fa-solid fa-hourglass-half text-blue-500'></i> Deadline: </h1>
                             <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
 
                               <input
@@ -658,7 +669,7 @@ const ProjectForm = () => {
                               </div>
                               <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
                                 <div>
-                                  Deadline:{revtasks['Task Deadline']}
+                                  Deadline: {revtasks['Task Deadline']}
                                 </div>
                                 <div>
                                   <i class="fa-solid fa-paperclip"></i> 0
@@ -758,7 +769,7 @@ const ProjectForm = () => {
                                 </div>
                                 <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
                                   <div>
-                                    Deadline:  {review['Task Deadline']}
+                                    Deadline: {review['Task Deadline']}
                                   </div>
                                   <div>
                                     <i class="fa-solid fa-paperclip"></i> 0
@@ -785,18 +796,26 @@ const ProjectForm = () => {
                                   <i class="fa-solid fa-circle-plus mx-8"></i>
                                 </div>
                                 {/* add comment section */}
+                                {comments.map((comments, index) => (
+                                  <div key={index} className='border my-2 border-gray-500 rounded-lg'>
+                                    <i class="fa-solid fa-circle-user mx-2 text-teal-400"></i>{comments}
+                                  </div>
+                                ))}
                                 <form>
                                   <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
-                                  <i class="fa-solid fa-message text-blue-500"></i>
+                                    <i class="fa-solid fa-message text-blue-500"></i>
                                     <input
                                       type='text'
+
                                       className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
                                       placeholder='Write a comment'
-                                      // value={taskID}
-                                      // onChange={(e) => setTaskID(e.target.value)}
+                                      ref={newComment}
+                                    // value={taskID}
+                                    // onChange={(e) => setTaskID(e.target.value)}
                                     />
+                                    <button className='font-semibold text-lg p-2 rounded-lg tooltip tooltip-left tooltip-info' data-tip='Send Comment' onClick={handleComment}>Send</button>
                                   </label>
-                                  <FileUploader/>
+                                  <FileUploader />
                                 </form>
                                 <div className="modal-action">
                                   <button data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => setSelectedTask(null)}>
