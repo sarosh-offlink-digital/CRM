@@ -51,12 +51,12 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    {
-      TaskID: 'NT5',
-      'Task Name': 'Offlink Digital Services Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
+  {
+    TaskID: 'NT5',
+    'Task Name': 'Offlink Digital Services Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
   ])
 
   let [revisionTasks, setRevisionTasks] = useState([{
@@ -87,12 +87,12 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    {
-      TaskID: 'RT5',
-      'Task Name': 'Offlink Digital Services Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
+  {
+    TaskID: 'RT5',
+    'Task Name': 'Offlink Digital Services Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
   ])
 
   let [review, setreview] = useState([{
@@ -109,26 +109,26 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    {
+  {
 
-      TaskID: 'RV3',
-      'Task Name': 'Offlink Digital About Us Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
-    {
+    TaskID: 'RV3',
+    'Task Name': 'Offlink Digital About Us Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
+  {
 
-      TaskID: 'RV4',
-      'Task Name': 'Offlink Digital Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
-    {
-      TaskID: 'RV5',
-      'Task Name': 'Offlink Digital Services Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
+    TaskID: 'RV4',
+    'Task Name': 'Offlink Digital Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
+  {
+    TaskID: 'RV5',
+    'Task Name': 'Offlink Digital Services Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
   ])
 
   let [completed, setcompleted] = useState([{
@@ -138,33 +138,33 @@ const ProjectForm = () => {
     'Task Description': 'Revamp the index page of the website',
     'Task Deadline': '2026-9-30'
   },
-    {
+  {
 
-      TaskID: 'CT2',
-      'Task Name': 'Offlink Digital About Us Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
-    {
+    TaskID: 'CT2',
+    'Task Name': 'Offlink Digital About Us Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
+  {
 
-      TaskID: 'CT3',
-      'Task Name': 'Offlink Digital About Us Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
-    {
+    TaskID: 'CT3',
+    'Task Name': 'Offlink Digital About Us Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
+  {
 
-      TaskID: 'CT4',
-      'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
-    {
-      TaskID: 'CT5',
-      'Task Name': 'Offlink Digital Services Page Revamp',
-      'Task Description': 'Revamp the index page of the website',
-      'Task Deadline': '2026-9-30'
-    },
+    TaskID: 'CT4',
+    'Task Name': 'Offlink Digital PoCTfolio Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
+  {
+    TaskID: 'CT5',
+    'Task Name': 'Offlink Digital Services Page Revamp',
+    'Task Description': 'Revamp the index page of the website',
+    'Task Deadline': '2026-9-30'
+  },
   ])
 
   let [members, setMembers] = useState([
@@ -424,30 +424,7 @@ const ProjectForm = () => {
                                     </div>
                                   ))}
 
-                                  {selectedTask && (
-                                    <dialog id="my_modal_1" className="modal" open>
-                                      <div className="text-white modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300">
-                                        <h3 className="font-bold text-lg border-b-gray-500 border-b-2 mb-8"><i class="fa-solid fa-list-check"></i> Task Title: {selectedTask['Task Name']}</h3>
-                                        <div className='my-4 flex justify-between border-b-gray-500 border-b-2'>
-                                          <p className=" text-sm text-gray-400"><i class="fa-solid fa-hashtag"></i>Task ID: {selectedTask['TaskID']}</p>
-                                          <p className='text-sm text-gray-400'><i class="fa-solid fa-user-shield"></i> Uploaded By: Admin</p>
-                                        </div>
-                                        <div className='my-8 border-b-gray-500 border-b-2'>
-                                          <p className="mb-2"><i class="fa-solid fa-info"></i> Task Description: </p>
-                                          <p>{selectedTask['Task Description']}</p>
-                                        </div>
-                                        <p className='border-b-gray-500 border-b-2 mb-8'><i class="fa-solid fa-hourglass-half"></i> Task Deadline: {selectedTask['Task Deadline']}</p>
-                                        <div>
-                                          <p className='text-sm text-gray-400 italic'> Attachments: </p>
-                                        </div>
-                                        <div className="modal-action">
-                                          <button data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => setSelectedTask(null)}>
-                                            Close
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </dialog>
-                                  )}
+                                  {/* Add task modal here */}
                                 </div>
                               </div>
                             </div>
@@ -616,7 +593,7 @@ const ProjectForm = () => {
                             </label>
                             <h1 className='text-white'> <i className='fa-solid fa-hourglass-half text-blue-500'></i> Deadline:</h1>
                             <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
-                             
+
                               <input
                                 type='date'
                                 className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
@@ -639,12 +616,12 @@ const ProjectForm = () => {
                           </form>
                         </div>
                       </dialog>
-                      <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl'>
+                      <div className='border-white border-2 border-t-0 p-4 h-[450px] overflow-y-auto rounded-b-xl '>
                         <div>
                           {newTasks.map((newTasks) => (
                             <div
                               key={newTasks.TaskID}
-                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
+                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500  bg-gray-800'
                               onClick={() => setSelectedTask(newTasks)}>
                               <div className='flex flex-wrap justify-between'>
                                 <div>
@@ -652,39 +629,16 @@ const ProjectForm = () => {
                                 </div>
                                 <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
                                   <div>
-                                    TaskID: {newTasks['TaskID']}
+                                    Deadline: {newTasks['Task Deadline']}
                                   </div>
                                   <div>
-                                    Deadline: {newTasks['Task Deadline']}
+                                    <i class="fa-solid fa-paperclip"></i> 0
                                   </div>
                                 </div>
                               </div>
                             </div>
                           ))}
-                          {selectedTask && (
-                            <dialog id="my_modal_1" className="modal" open>
-                              <div className="text-white modal-box bg-gradient-to-r from-slate-800 via-slate-900 to-slate-950 border-2 border-gray-300">
-                                <h3 className="font-bold text-lg border-b-gray-500 border-b-2 mb-8"><i class="fa-solid fa-list-check"></i> Task Title: {selectedTask['Task Name']}</h3>
-                                <div className='my-4 flex justify-between border-b-gray-500 border-b-2'>
-                                  <p className=" text-sm text-gray-400"><i class="fa-solid fa-hashtag"></i>Task ID: {selectedTask['TaskID']}</p>
-                                  <p className='text-sm text-gray-400'><i class="fa-solid fa-user-shield"></i> Uploaded By: Admin</p>
-                                </div>
-                                <div className='my-8 border-b-gray-500 border-b-2'>
-                                  <p className="mb-2"><i class="fa-solid fa-info"></i> Task Description: </p>
-                                  <p>{selectedTask['Task Description']}</p>
-                                </div>
-                                <p className='border-b-gray-500 border-b-2 mb-8'><i class="fa-solid fa-hourglass-half"></i> Task Deadline: {selectedTask['Task Deadline']}</p>
-                                <div>
-                                  <p className='text-sm text-gray-400 italic'> Attachments: </p>
-                                </div>
-                                <div className="modal-action">
-                                  <button data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => setSelectedTask(null)}>
-                                    Close
-                                  </button>
-                                </div>
-                              </div>
-                            </dialog>
-                          )}
+                          {/* add task dialog here if needed */}
                         </div>
                       </div>
                     </div>
@@ -696,7 +650,7 @@ const ProjectForm = () => {
                         {revisionTasks.map((revtasks) => (
                           <div
                             key={revtasks.TaskID}
-                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
+                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500 bg-gray-800'
                             onClick={() => setSelectedTask(revtasks)}>
                             <div className='flex justify-between flex-wrap'>
                               <div >
@@ -704,10 +658,10 @@ const ProjectForm = () => {
                               </div>
                               <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
                                 <div>
-                                  TaskID:{revtasks['TaskID']}
+                                  Deadline:{revtasks['Task Deadline']}
                                 </div>
                                 <div>
-                                  Deadline:{revtasks['Task Deadline']}
+                                  <i class="fa-solid fa-paperclip"></i> 0
                                 </div>
                               </div>
                             </div>
@@ -796,7 +750,7 @@ const ProjectForm = () => {
                           {review.map((review) => (
                             <div
                               key={review.TaskID}
-                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
+                              className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500 bg-gray-800'
                               onClick={() => setSelectedTask(review)}>
                               <div className='flex flex-wrap justify-between'>
                                 <div className=''>
@@ -804,10 +758,10 @@ const ProjectForm = () => {
                                 </div>
                                 <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
                                   <div>
-                                    TaskID:{review['TaskID']}
+                                    Deadline:  {review['Task Deadline']}
                                   </div>
                                   <div>
-                                    Task Deadline:  {review['Task Deadline']}
+                                    <i class="fa-solid fa-paperclip"></i> 0
                                   </div>
                                 </div>
                               </div>
@@ -826,9 +780,24 @@ const ProjectForm = () => {
                                   <p>{selectedTask['Task Description']}</p>
                                 </div>
                                 <p className='border-b-gray-500 border-b-2 mb-8'><i class="fa-solid fa-hourglass-half"></i> Task Deadline: {selectedTask['Task Deadline']}</p>
-                                <div>
+                                <div className='flex items-start'>
                                   <p className='text-sm text-gray-400 italic'> Attachments: </p>
+                                  <i class="fa-solid fa-circle-plus mx-8"></i>
                                 </div>
+                                {/* add comment section */}
+                                <form>
+                                  <label className='flex items-center bg-gray-800 border-white text-white input focus:border-white input-bordered gap-2 w-full shadow-lg my-4'>
+                                  <i class="fa-solid fa-message text-blue-500"></i>
+                                    <input
+                                      type='text'
+                                      className='grow bg-transparent border-none focus:ring-0 focus:outline-none'
+                                      placeholder='Write a comment'
+                                      // value={taskID}
+                                      // onChange={(e) => setTaskID(e.target.value)}
+                                    />
+                                  </label>
+                                  <FileUploader/>
+                                </form>
                                 <div className="modal-action">
                                   <button data-tip='Back to Tasks' className='tooltip tooltip-info tooltip-left bg-blue-800 p-3 mt-2 text-white rounded-md' onClick={() => setSelectedTask(null)}>
                                     Close
@@ -848,20 +817,20 @@ const ProjectForm = () => {
                         {completed.map((completed) => (
                           <div
                             key={completed.TaskID}
-                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500'
+                            className='cursor-pointer my-2 text-white border border-gray-200 p-2 rounded-lg hover:text-blue-500 hover:border-blue-500 bg-gray-800'
                             onClick={() => setSelectedTask(completed)}>
                             <div className='flex justify-between flex-wrap'>
                               <div>
                                 {completed['Task Name']}
                               </div>
                               <div className='flex justify-between gap-14 items-center text-xs text-gray-400'>
-                                  <div>
-                                    TaskID:{completed['TaskID']}
-                                  </div>
-                                  <div>
-                                    Task Deadline:  {completed['Task Deadline']}
-                                  </div>
+                                <div>
+                                  Deadline:  {completed['Task Deadline']}
                                 </div>
+                                <div>
+                                  <i class="fa-solid fa-paperclip"></i> 0
+                                </div>
+                              </div>
                             </div>
                           </div>
                         ))}
