@@ -7,7 +7,6 @@ import ticketlogo from '../../src/ticket.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { expand, contract } from '../../store/store';
 
-
 const SideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenSales, setIsOpenSales] = useState(false);
@@ -18,7 +17,6 @@ const SideNav = () => {
   const navBarwidth = useSelector((state) => state.navSelection.value)
   const dispatch = useDispatch();
 
-
   const handleToggleForSales = () => {
     setIsOpenSales(!isOpenSales);
   };
@@ -27,13 +25,14 @@ const SideNav = () => {
     setIsOpen(!isOpen);
   };
 
+  // Toggle Navbar width actions
   const handleToggleMenu = () => {
     if (navBarwidth === 'lg:w-20') {
       setCrmTitle('Customer Relationship Management');
       setToggleNavTool('Close Menu')
       dispatch(expand())
     }
-    if (navBarwidth === 'lg:w-52') {
+    else if (navBarwidth === 'lg:w-52') {
       setCrmTitle('');
       setToggleNavTool('Open Menu')
       dispatch(contract())
