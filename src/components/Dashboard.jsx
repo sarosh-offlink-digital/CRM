@@ -68,8 +68,8 @@ const Dashboard = ({ leadsData, customerData }) => {
                             <h1 className='text-sm  my-1 font-bold'>1</h1>
                         </div>
                     </div>
-                    <div className='flex gap-4 justify-center lg:justify-start flex-wrap'>
-                        <div className=' border-2 border-slate-700 px-2 rounded-lg lg:w-[32%]  w-full  mt-6 '>
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mx-0 md:mx-5'>
+                        <div className=' border-2 border-slate-700 px-2 rounded-lg   w-full  mt-6 '>
                             <div className=' bg-slate-900 rounded-lg shadow-lg py-3'>
                                 <div className='px-3 text-lg mb-5'>
                                     <h1 className='text-white font-semibold'>Leads Data Per Week</h1>
@@ -78,7 +78,7 @@ const Dashboard = ({ leadsData, customerData }) => {
                                 {/* <LineChartDB leadsDataDB={leadsDataDB} customerDataDB={customerDataDB} /> */}
                             </div>
                         </div>
-                        <div className=' border-2 border-slate-700 px-2 rounded-lg lg:w-[32%] w-full   mt-6 '>
+                        <div className=' border-2 border-slate-700 px-2 rounded-lg  w-full   mt-6 '>
                             <div className=' bg-slate-900 rounded-lg shadow-lg py-3'>
                                 <div className='text-lg px-3 mb-5'>
                                     <h1 className='text-white font-semibold'>Leads and Customers Conversion</h1>
@@ -86,7 +86,7 @@ const Dashboard = ({ leadsData, customerData }) => {
                                 <BarChartDB leadsDataDB={leadsDataDB} customerDataDB={customerDataDB} />
                             </div>
                         </div>
-                        <div className=' border-2 border-slate-700 px-2 rounded-lg lg:w-[32%] w-full  mt-6 '>
+                        <div className=' border-2 border-slate-700 px-2 rounded-lg  w-full  mt-6 '>
                             <div className=' bg-slate-900 rounded-lg shadow-lg py-3'>
                                 <div className='text-lg px-3 mb-5'>
                                     <h1 className='text-white font-semibold'>Current Active Users</h1>
@@ -96,8 +96,7 @@ const Dashboard = ({ leadsData, customerData }) => {
                                 <UserStatusDonutChartDB />
                             </div>
                         </div>
-
-                        <div className='lg:w-[32%] lg:h-[100px] w-full  '>
+                        <div className=' lg:h-[100px] w-full  '>
                             <div className=' border-2 border-slate-700 bg-slate-900 rounded-lg shadow-lg py-3'>
                                 <div className='text-xl px-3 mb-5'>
                                     <h1 className='text-white font-semibold'>Projects By Status</h1>
@@ -107,7 +106,7 @@ const Dashboard = ({ leadsData, customerData }) => {
                             </div>
                         </div>
 
-                        <div className='lg:w-[32%]  w-full '>
+                        <div className='  w-full '>
                             <div className=' border-2 border-slate-700 bg-slate-900 rounded-lg shadow-lg py-3'>
                                 <div className='text-xl px-3 mb-5'>
                                     <h1 className='text-white font-semibold'>Customers By Status </h1>
@@ -115,7 +114,7 @@ const Dashboard = ({ leadsData, customerData }) => {
                                 <FunnelChartApex />
                             </div>
                         </div>
-                        <div className='lg:w-[32%] w-full  '>
+                        <div className=' w-full  '>
                             <div className='border-2 border-slate-700 bg-slate-900 rounded-lg shadow-lg'>
                                 <div className='text-xl mt-2 px-3 mb-5'>
                                     <h1 className='text-white font-semibold'>Sales Target </h1>
@@ -127,15 +126,14 @@ const Dashboard = ({ leadsData, customerData }) => {
                         </div>
 
                     </div>
-                    <div className='mr-7 '>
-                        
-                        <div className='border-2 border-slate-700 bg-slate-900 rounded-lg shadow-lg mt-4 '>
-                        <div className='text-lg px-3 mb-5'>
-                            <h1 className='text-white font-semibold mt-2'>Task Stages</h1>
+                   
+                        <div className='grid grid-cols-1 border-2 border-slate-700 bg-slate-900 rounded-lg shadow-lg mt-4 mx-0 md:mx-5'>
+                            <div className='text-lg px-3 mb-5'>
+                                <h1 className='text-white font-semibold mt-2'>Task Stages</h1>
+                                <MultiGroupDB />
+                            </div>
                         </div>
-                            <MultiGroupDB />
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

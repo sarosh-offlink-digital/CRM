@@ -4,7 +4,7 @@ import member1 from '../../src/profilepic.jpg'
 import member2 from '../../src/profilepic2.jpg'
 import member3 from '../../src/profilepic3.jpg'
 import member4 from '../../src/profilepic4.jpg'
-import { Chart } from 'react-google-charts';
+// import { Chart } from 'react-google-charts';
 import Projectmembers from '../../projectcomponents/Projectmembers';
 import 'react-quill/dist/quill.snow.css';
 import ProjectDiscussion from '../../projectcomponents/ProjectDiscussion'
@@ -19,80 +19,83 @@ import hamzaPic from '../../src/hamza.png'
 import dummyUser from '../../src/user.png'
 import waniPic from '../../src/wani.png'
 import mustafaPic from '../../src/mustafa.png'
+import TaskTimeline from '../Charts/Projects/TaskTimeline'
 
 const ProjectForm = () => {
   const [selectedTask, setSelectedTask] = useState(null);
 
-  let [newTasks, setTasks] = useState([{
+  let [newTasks, setTasks] = useState([
+    {
 
-    TaskID: 'NT1',
-    'Task Name': 'Offlink Digital Index Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'NT1',
+      'Task Name': 'Offlink Digital Index Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'NT2',
-    'Task Name': 'Offlink Digital About Us Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'NT2',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'NT3',
-    'Task Name': 'Offlink Digital About Us Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'NT3',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'NT4',
-    'Task Name': 'Offlink Digital Portfolio Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
-    TaskID: 'NT5',
-    'Task Name': 'Offlink Digital Services Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
+      TaskID: 'NT4',
+      'Task Name': 'Offlink Digital Portfolio Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
+      TaskID: 'NT5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
-  let [revisionTasks, setRevisionTasks] = useState([{
+  let [revisionTasks, setRevisionTasks] = useState([
+    {
 
-    TaskID: 'RT1',
-    'Task Name': 'Offlink Digital Index Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'RT1',
+      'Task Name': 'Offlink Digital Index Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'RT2',
-    'Task Name': 'Offlink Digital About Us Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'RT2',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'RT3',
-    'Task Name': 'Offlink Digital About Us Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
+      TaskID: 'RT3',
+      'Task Name': 'Offlink Digital About Us Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
 
-    TaskID: 'RT4',
-    'Task Name': 'Offlink Digital Portfolio Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
-  {
-    TaskID: 'RT5',
-    'Task Name': 'Offlink Digital Services Page Revamp',
-    'Task Description': 'Revamp the index page of the website',
-    'Task Deadline': '2026-9-30'
-  },
+      TaskID: 'RT4',
+      'Task Name': 'Offlink Digital Portfolio Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
+    {
+      TaskID: 'RT5',
+      'Task Name': 'Offlink Digital Services Page Revamp',
+      'Task Description': 'Revamp the index page of the website',
+      'Task Deadline': '2026-9-30'
+    },
   ])
 
   let [review, setreview] = useState([{
@@ -217,10 +220,10 @@ const ProjectForm = () => {
   const handleComment = (e) => {
     e.preventDefault();
     const newCommentCont = newComment.current.value;
-    if(newCommentCont.length===0){
+    if (newCommentCont.length === 0) {
       console.log('comment length error')
     }
-    else{
+    else {
       setComments([...comments, newCommentCont]);
     }
   }
@@ -312,23 +315,21 @@ const ProjectForm = () => {
       }
     },
   };
-  const chartEvents = [
-    {
-      eventName: 'select',
-      callback({ chartWrapper }) {
-        const chart = chartWrapper.getChart();
-        const selection = chart.getSelection();
-        if (selection.length) {
-          const task = data[selection[0].row + 1];
-          alert(`Task selected: ${task[1]}`);
-        }
-      },
-    },
-  ];
+  // const chartEvents = [
+  //   {
+  //     eventName: 'select',
+  //     callback({ chartWrapper }) {
+  //       const chart = chartWrapper.getChart();
+  //       const selection = chart.getSelection();
+  //       if (selection.length) {
+  //         const task = data[selection[0].row + 1];
+  //         alert(`Task selected: ${task[1]}`);
+  //       }
+  //     },
+  //   },
+  // ];
 
   // Handle New Tasks
-
-
   return (
     <div>
       <div className='p-4'>
@@ -797,8 +798,8 @@ const ProjectForm = () => {
                                 </div>
                                 {/* add comment section */}
                                 {comments.map((comments, index) => (
-                                  <div key={index} className='border my-2 border-gray-500 rounded-lg'>
-                                    <i class="fa-solid fa-circle-user mx-2 text-teal-400"></i>{comments}
+                                  <div key={index} className='border my-2 border-gray-500 rounded-lg py-2'>
+                                    <i class="fa-solid fa-circle-user mx-2 text-cyan-400"></i>{comments}
                                   </div>
                                 ))}
                                 <form>
@@ -882,19 +883,21 @@ const ProjectForm = () => {
             )}
           {displayTabs === 'Chart' &&
             (
-              //   <div className='my-5'>
-              //   <Chart
-              //     chartType="Gantt"
-              //     width="auto"
-              //     height="400px"
-              //     data={data}
-              //     options={options}
-              //     chartEvents={chartEvents}
-              //   />
-              // </div>
-              <div>
-                Gantt Chart
+              <div className='my-5'>
+                <TaskTimeline />
+                {/* <Chart
+                  chartType="Gantt"
+                  width="auto"
+                  height="400px"
+                  
+                  data={data}
+                  options={options}
+                  chartEvents={chartEvents}
+                /> */}
               </div>
+              // <div>
+              //   Gantt Chart
+              // </div>
             )}
           {displayTabs === 'Notes' &&
             (

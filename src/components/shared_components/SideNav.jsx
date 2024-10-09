@@ -4,14 +4,20 @@ import logo2 from '../../src/logo2.png';
 import dashboardlogo from '../../src/dashboard.png';
 import leadlogo from '../../src/leads.png';
 import ticketlogo from '../../src/ticket.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { expand, contract } from '../../store/store';
+
 
 const SideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenSales, setIsOpenSales] = useState(false);
-  const [toggleNavHeight, setToggleNavHeight] = useState(false);
-  const [navHeight, setNavHeight] = useState('lg:w-52');
   const [toggleNavTool, setToggleNavTool] = useState('Close Menu')
   const [crmTitle, setCrmTitle] = useState('Customer Relationship Management');
+
+  // For Nav bar width using Redux
+  const navBarwidth = useSelector((state) => state.navSelection.value)
+  const dispatch = useDispatch();
+
 
   const handleToggleForSales = () => {
     setIsOpenSales(!isOpenSales);
@@ -22,17 +28,17 @@ const SideNav = () => {
   };
 
   const handleToggleMenu = () => {
-    setToggleNavHeight(!toggleNavHeight);
-    if (toggleNavHeight === false) {
-      setNavHeight('lg:w-52');
+    if (navBarwidth === 'lg:w-20') {
       setCrmTitle('Customer Relationship Management');
       setToggleNavTool('Close Menu')
-    } else {
-      setNavHeight('lg:w-20');
+      dispatch(expand())
+    }
+    if (navBarwidth === 'lg:w-52') {
       setCrmTitle('');
       setToggleNavTool('Open Menu')
+      dispatch(contract())
     }
-  };
+  }
 
   const location = useLocation();
 
@@ -46,20 +52,20 @@ const SideNav = () => {
       <div className='relative'>
         <div className=' tooltip tooltip-bottom tooltip-info absolute right-[-15px] top-2 hidden lg:block z-[999] bg-blue-600 border-gray-200 border-2 rounded-full px-2 py-1 transition-transform duration-400 hover:bg-blue-400 cursor-pointer hover:scale-110'
           onClick={handleToggleMenu} data-tip={toggleNavTool} >
-          <i className={`fa-solid fa-arrow-right-from-bracket text-white text-sm  transition-transform duration-500 ${navHeight === "lg:w-20" ? 'rotate-180' : ''}`} ></i>
+          <i className={`fa-solid fa-arrow-right-from-bracket text-white text-sm  transition-transform duration-500 ${navBarwidth === "lg:w-20" ? 'rotate-180' : ''}`} ></i>
         </div>
       </div>
-      <div className={`lg:drawer-open min-h-screen ${navHeight} transition-transform duration-300 bg-gradient-to-b from-purple-900 via-blue-600 to-blue-900`}>
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle relative z-50"/>
+      <div className={`lg:drawer-open min-h-screen ${navBarwidth} transition-transform duration-300 bg-gradient-to-b from-purple-900 via-blue-600 to-blue-900`}>
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle relative z-50" />
         <label htmlFor="my-drawer-2" className="lg:hidden"><i className="fa-solid fa-bars text-2xl absolute left-6 top-8 mx-2 text-white"></i></label>
         <div className="drawer-side z-50">
           <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
           <div className="menu w-52 lg:w-80 min-h-full text-base-content lg:bg-transparent bg-gradient-to-b from-purple-900 via-blue-600 to-blue-900">
             <div className='w-48 mt-5 text-center'>
-              <h1 className="p-4 lg:px-0 lg:py-3 lg:m-0 text-center text-sm text-white lg:text-sm lg:text-center font-bold">{crmTitle}</h1>
+              <h1 className={`p-4 lg:px-0 lg:py-3 lg:m-0 text-center text-sm text-white lg:text-sm lg:text-center font-bold ${navBarwidth === "lg:w-20"  ? 'hidden mt-16' : 'block'}`}>{crmTitle}</h1>
             </div>
             <div className='flex justify-start'>
-              <img src={logo2} className={`ml-16 lg:ml-12 size-20 lg:size-20 mb-6 ${navHeight === "lg:w-20" ? 'hidden' : ''}`} alt="logo" />
+              <img src={logo2} className={`ml-16 lg:ml-12 size-20 lg:size-20 mb-6 ${navBarwidth === "lg:w-20" ? 'hidden' : ''}`} alt="logo" />
             </div>
             <div className='flex items-center realtive hover:bg-blue-600 rounded-md mt-5'>
               <div className="dropdown">
@@ -114,7 +120,7 @@ const SideNav = () => {
                   className="flex justify-start items-center py-2 px-4 ml-14 w-32 rounded-md text-white bg-transparent cursor-pointer hover:bg-blue-600"
                   onClick={handleToggleForSales}>
                   Sales
-              <i className="fa-solid fa-dollar-sign absolute left-9 text-white text-xl"></i>
+                  <i className="fa-solid fa-dollar-sign absolute left-9 text-white text-xl"></i>
                   <i className={`ml-[70px] text-lg fa-solid fa-caret-right transition-transform duration-300 ${isOpenSales ? 'rotate-90' : ''}`}></i>
                 </div>
                 {isOpenSales && (
